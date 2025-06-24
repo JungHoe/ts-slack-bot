@@ -1,0 +1,35 @@
+{
+  "name": "ts-slack-bot",
+  "version": "1.0.0",
+  "description": "일해라봇",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JungHoe/ts-slack-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JungHoe/ts-slack-bot/issues"
+  },
+  "homepage": "https://github.com/JungHoe/ts-slack-bot#readme",
+  "dependencies": {
+    "@slack/web-api": "^7.9.3",
+    "@types/node": "^24.0.3",
+    "axios": "^1.10.0",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.5.0",
+    "jsdom": "^26.1.0",
+    "playwright": "^1.53.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.7"
+  }
+}
