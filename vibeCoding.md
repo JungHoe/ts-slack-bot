@@ -286,3 +286,39 @@
 **A.**
 
 - (바로 위 내용처럼 정리)
+
+---
+
+### Q. 프로세스가 로그인 실패 시 exit(1)되면 도커 재시작 관련 어떻게 동작하는지 알고 싶어
+
+**A.**
+
+- restart: unless-stopped 옵션은 서버 재부팅, 도커 재시작, 프로세스 에러 등으로 컨테이너가 종료될 때 자동 재시작
+- 사용자가 `docker stop` 명령으로 직접 중지한 경우에만 자동 재시작 안 함
+
+---
+
+### Q. 도커 빌드 실패: Playwright가 Alpine에서 지원되지 않는다는 경고가 있어
+
+**A.**
+
+- Alpine 대신 node:20(Debian 기반) 이미지로 변경하여 Playwright 호환성 문제 해결
+- Dockerfile FROM 라인 수정, Playwright 공식 지원 환경으로 변경
+
+---
+
+### Q. playwright install 명령이 꼭 필요한 건가요?
+
+**A.**
+
+- 필수 명령: 브라우저 바이너리와 OS 의존성을 설치해야 크롤러가 동작함
+- npm install만으로는 실제 브라우저 실행 파일이 설치되지 않음
+
+---
+
+### Q. 크로미움만 설치할 수는 없나요?
+
+**A.**
+
+- `npx playwright install chromium --with-deps`로 Chromium만 설치 가능
+- 코드에서 chromium만 사용하는 것 확인 후 Dockerfile 수정
