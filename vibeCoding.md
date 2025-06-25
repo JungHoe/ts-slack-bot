@@ -236,3 +236,53 @@
 - (바로 위 내용처럼 정리)
 
 ---
+
+## 2025-06-25 대화 기록
+
+### Q. 로그인 실패 처리를 DOM이 아니라 /api/~~~ 400 응답으로 바꿔줘
+
+**A.**
+
+- Playwright의 page.on('response')로 400 감지, 실패 시 슬랙 DM 및 컨테이너 종료(process.exit(1))로 개선
+
+---
+
+### Q. cron으로 index.ts를 워킹데이 오전 9시에 실행하고 싶어
+
+**A.**
+
+- node-cron, ts-node로 src/cron.ts 작성, 월~금 오전 9시 자동 실행 구현
+- package.json에 "cron-start" 스크립트 추가
+
+---
+
+### Q. 도커로 배포할 때 cron이 자동 실행되고, 로그인 실패 시 컨테이너가 내려가게 해줘
+
+**A.**
+
+- Dockerfile 작성: node, playwright, cron 자동 실행
+- crawler.ts에서 로그인 실패 시 process.exit(1) 추가
+
+---
+
+### Q. docker-compose로 재배포 쉽게 하고 싶어
+
+**A.**
+
+- docker-compose.yml 작성: build, 환경변수, 타임존, shm_size 등 설정
+
+---
+
+### Q. docker-compose.yml에서 environment 중복 제거해줘
+
+**A.**
+
+- environment 항목 하나로 합침 (NODE_ENV, TZ)
+
+---
+
+### Q. 오늘 나눈 대화 vibeCoding.md에 기록해줘
+
+**A.**
+
+- (바로 위 내용처럼 정리)

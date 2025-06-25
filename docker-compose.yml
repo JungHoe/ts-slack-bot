@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  slack-bot:
+    build: .
+    container_name: ts-slack-bot
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - TZ=Asia/Seoul
+    # 필요시 환경변수 파일 사용
+    # env_file:
+    #   - .env
+    # 타임존 설정 (옵션)
+    # Playwright가 필요로 하는 공유 메모리 설정 (옵션)
+    shm_size: 1g
