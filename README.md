@@ -1,3 +1,3 @@
 # ts-slack-bot
 
-### 바이브코딩으로 만드는 slack 연차알림봇
+### AI 코딩 도구와 함께 만든 Slack 연차 알림봇 (TypeScript·cron·Docker)
